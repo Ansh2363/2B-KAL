@@ -1,0 +1,51 @@
+<section class="container">
+    {{#if user}}
+        <h2>Welcome, {{user}}!<a href="/transactions/add" class="btn btn-primary btn-sm ml-5">Add transaction</a></h2>
+    {{else}}
+        <p>Please <a href="/users/login">login</a> to add a transaction.</p>
+    {{/if}}
+
+    <!-- Search Form -->
+    <form action="/transactions/search" method="GET" class="mb-4">
+        <div class="input-group">
+            <input type="text" name="query" class="form-control" placeholder="Search for transactions..." value="{{query}}">
+            <button type="submit" class="btn btn-primary">Search</button>
+        </div>
+    </form>
+
+    <div class="row">
+        <div class="col-md-12">
+            {{#if transactions.length}}
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Description</th>
+                        <th>Amount</th>
+                        <th>Category</th>
+                        <th>Date</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {{#each transactions}}
+                    <tr>
+                        <td>{{description}}</td>
+                        <td>{{amount}}</td>
+                        <td>{{category}}</td>
+                        <td>{{date}}</td>
+                        <td>
+                            <a href="/transactions/{{_id}}/edit" class="btn btn-warning">Edit</a>
+                            <form action="/transactions/{{_id}}/delete" method="POST" class="d-inline">
+                                <button type="submit" class="btn btn-danger">Delete</button>
+                            </form>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+            {{else}}
+            <p>No transactions recorded yet.</p>
+            {{/if}}
+        </div>
+    </div>
+</section>

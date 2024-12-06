@@ -1,0 +1,32 @@
+<header class="site-header">
+  <nav class="navbar navbar-expand-md navbar-light bg-primary fixed-top">
+    <div class="container">
+      <a class="navbar-brand mr-4" href="/" style="color: #ffffff; font-weight: bold;">BudgetApp</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle"
+        aria-controls="navbarToggle" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarToggle">
+        <ul class="navbar-nav mr-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/transactions/view" style="color: #e1f5fe; font-weight: bold;">Transactions</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav">
+          {{#if user}}
+          <li class="nav-item">
+            <a class="nav-link" href="/users/logout" style="color: #ffeb3b; font-weight: bold;">Logout</a>
+          </li>
+          {{else}}
+          <li class="nav-item">
+            <a class="nav-link" href="/users/login" style="color: #ffeb3b; font-weight: bold;">Login</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/users/register" style="color: #ffeb3b; font-weight: bold;">Register</a>
+          </li>
+          {{/if}}
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>

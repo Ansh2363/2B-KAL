@@ -1,0 +1,85 @@
+<section class="hero-section text-center py-5 bg-gradient">
+    <div class="container">
+        <h1 class="display-4 text-white">Take Control of Your Finances</h1>
+        <p class="lead text-light">Track your income, expenses, and stay on top of your budget with ease.</p>
+
+        {{#if user}}
+        <p class="text-white">Welcome back, {{user.username}}! Ready to manage your budget?</p>
+        <a href="/transactions/add" class="btn btn-light btn-lg">Log a New Transaction</a>
+        <a href="/users/logout" class="btn btn-danger btn-lg">Logout</a>
+        {{else}}
+        <a href="/users/login" class="btn btn-primary btn-lg">Login</a>
+        <a href="/users/register" class="btn btn-success btn-lg">Create an Account</a>
+        {{/if}}
+    </div>
+</section>
+
+<section class="container mt-5 text-center">
+    <h2 class="display-4">Why Track Your Budget?</h2>
+    <p class="lead">Managing your budget is key to achieving financial freedom. Here's why:</p>
+    <div class="row">
+        <div class="col-md-4">
+            <div class="feature-box p-4">
+                <h4><i class="fas fa-chart-line"></i> Monitor Your Expenses</h4>
+                <p>Track where your money is going and identify areas where you can save or adjust your spending.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-box p-4">
+                <h4><i class="fas fa-wallet"></i> Manage Your Income</h4>
+                <p>Log and track your income sources to better understand your financial situation.</p>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="feature-box p-4">
+                <h4><i class="fas fa-balance-scale"></i> Stay on Budget</h4>
+                <p>Set budget limits for different categories and stick to them to avoid overspending.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container mt-5">
+    <div class="row align-items-center">
+        <div class="col-md-6">
+            <h3 class="display-4">Personalized Budgeting</h3>
+            <p class="lead">Create custom budgets for different categories, track your progress, and see where you can
+                save more.</p>
+            <a href="/budget" class="btn btn-primary btn-lg">View Your Budget</a>
+        </div>
+        <div class="col-md-6">
+            <img src="/images/budget-plans.jpg" alt="Budget Plans" class="img-fluid rounded shadow-lg">
+        </div>
+    </div>
+</section>
+
+<section class="container mt-5">
+    <div class="row">
+        <div class="col-md-12 text-center">
+            <h2 class="display-4">Smart Spending Tips</h2>
+            <p class="lead">Save money and optimize your spending with these simple tips:</p>
+        </div>
+        <div class="col-md-6">
+            <div class="tip-box">
+                <h4>Set Realistic Goals</h4>
+                <p>Set achievable financial goals to ensure you're staying on track and reaching your desired outcomes.
+                </p>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="tip-box">
+                <h4>Track Your Subscriptions</h4>
+                <p>Cancel or adjust unnecessary subscriptions to save money and better allocate your budget.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="container mt-5 mb-5">
+    <div class="text-center">
+        <h2 class="display-4">Start Your Budgeting Journey Today</h2>
+        <p class="lead">Join thousands of others in gaining control over your finances and reaching your financial
+            goals.</p>
+        <a href="/users/register" class="btn btn-success btn-lg">Sign Up Now</a>
+    </div>
+</section>
